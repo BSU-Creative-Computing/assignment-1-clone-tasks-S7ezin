@@ -1,0 +1,104 @@
+$headerandfooter-bg:#8ccff7; 
+
+$content1-color:#4e89ae;
+$content2-color:#43658b;
+$content3-color:#ed6663;
+$content4-color:#ffa372;
+
+$footer-height: 50px;
+$hover-color:#444;
+
+@mixin line-style($bg-color){
+    background-color: $bg-color; 
+    height: 30px; 
+    width: 100%; 
+    cursor: pointer;
+    &:hover{
+        background-color: $hover-color; 
+    }
+
+}
+
+@mixin circle-style($bg-color, $height, $width){
+    background-color: $bg-color; 
+    height: $height; 
+    width: $width; 
+    border-radius: 100%; 
+    margin: 5px; 
+    cursor: pointer;
+    &:hover{
+        background-color: $hover-color;
+    }
+}
+
+
+body{
+    margin: 0% auto;
+    width: 100%;
+}
+header{
+    margin: 0%;
+    background-color: $headerandfooter-bg; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+}
+
+picture{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.lines{
+    margin: 0% auto;
+    margin-top: 30px;
+
+}
+
+.line1{
+    @include line-style($content1-color)   
+}
+.line2{
+    @include line-style($content2-color)
+}
+.line3{
+    @include line-style($content3-color)
+}
+.line4{
+    @include line-style($content4-color)
+}
+
+.circles{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle1{
+    @include circle-style($content1-color,70px ,70px )
+}
+.circle2{
+    @include circle-style($content2-color,80px ,80px )
+}
+.circle3{
+    @include circle-style($content3-color,90px ,90px )
+}
+.circle4{
+    @include circle-style($content4-color,100px ,100px )
+}
+
+footer{
+    margin: 0%;
+    background-color: $headerandfooter-bg;
+    height: $footer-height;
+}
+
+@media screen and (max-width: 620px){
+    .circles{
+        flex-direction: column;
+    }
+}
